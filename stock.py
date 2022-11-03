@@ -31,11 +31,15 @@ def quarterly_result(company_url):
     abc=qua_res_fin.find('div',class_='col-12')
     xyz=abc.find('div',class_='card cardscreen')
     print(xyz.h4.text)
-    #for table in xyz.find_all('table'):
-     #   print(table.get('class'))
-    full_table=xyz.find('table', class_='table').text
-    thead=full_table.thead.find('tr')
-    print(thead)
+    full_table=xyz.find('table', class_='table')
+    header=[]
+    for i in full_table.thead.find_all('th'):
+        title=i.text.strip()
+        header.append(title)
+    print(header)
+
+
+#_______________________________________________________________________________________
 
 company_name=input("Enter the company name: ")
 company_url='https://ticker.finology.in/company/'+company_name
