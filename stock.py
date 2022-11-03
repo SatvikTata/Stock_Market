@@ -33,8 +33,9 @@ def quarterly_result(company_url):
     print(xyz.h4.text)
     #for table in xyz.find_all('table'):
      #   print(table.get('class'))
-    pqr=xyz.find('table', class_='table').text
-    print(pqr)
+    full_table=xyz.find('table', class_='table').text
+    thead=full_table.thead.find('tr')
+    print(thead)
 
 company_name=input("Enter the company name: ")
 company_url='https://ticker.finology.in/company/'+company_name
