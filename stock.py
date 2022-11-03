@@ -1,3 +1,4 @@
+import pandas as pd
 from bs4 import BeautifulSoup
 import requests
 
@@ -36,7 +37,8 @@ def quarterly_result(company_url):
     for i in full_table.thead.find_all('th'):
         title=i.text.strip()
         header.append(title)
-    print(header)
+    df =pd.DataFrame(columns = header)
+    print(df)
 
 
 #_______________________________________________________________________________________
