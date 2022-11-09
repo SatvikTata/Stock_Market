@@ -23,7 +23,7 @@ def sum_of_company(company_url):      #will give the basic summary of the compan
 
 #________________________________________________________________________________________
 
-def quarterly_result(company_url):
+#def quarterly_result(company_url):
     html_text=requests.get(company_url).text
     soup=BeautifulSoup(html_text,'lxml')
     qua_res_big=soup.find('div',class_='innerpagecontent')
@@ -46,5 +46,5 @@ def quarterly_result(company_url):
 company_name=input("Enter the company name: ")
 company_url='https://ticker.finology.in/company/'+company_name
 sum_of_company(company_url)
-quarterly_result(company_url)
+#quarterly_result(company_url)
 
