@@ -48,4 +48,3 @@ company_url='https://ticker.finology.in/company/'+company_name
 sum_of_company(company_url)
 #quarterly_result(company_url)
 
-print('Hello World')
